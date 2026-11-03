@@ -1,0 +1,149 @@
+/* Weather forecast layout — Flexbox, mobile first */
+:root {
+  --font-main: "Roboto", sans-serif;
+  --color-text-dark: #3c3c3c;
+  --color-text: #555;
+  --color-muted: #8a8a8a;
+  --color-line: #d4d4d4;
+  --color-bg: #fff;
+
+  --page-pad: 16px;
+  --fs-city: 40px;
+  --fs-temp: 40px;
+  --fs-meta: 14px;
+  --fs-day: 16px;
+  --row-h: 88px;
+}
+
+@media (min-width: 600px) {
+  :root {
+    --page-pad: 32px;
+    --fs-city: 60px;
+    --fs-temp: 56px;
+    --fs-meta: 18px;
+    --fs-day: 20px;
+    --row-h: 124px;
+  }
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: var(--fs-meta);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.weather {
+  max-width: 760px;
+  margin-inline: auto;
+  padding: var(--page-pad);
+}
+
+.current__city {
+  color: var(--color-text-dark);
+  font-size: var(--fs-city);
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.current__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 32px;
+  margin-top: 8px;
+}
+
+.current__now {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.current__icon {
+  width: 72px;
+  height: auto;
+}
+
+.current__temp {
+  display: flex;
+  align-items: flex-start;
+  color: var(--color-text-dark);
+  font-size: var(--fs-temp);
+  line-height: 1;
+}
+
+.current__unit {
+  margin-top: 4px;
+  color: var(--color-muted);
+  font-size: .4em;
+}
+
+.current__details strong,
+.day__pollen strong {
+  color: var(--color-text-dark);
+  font-weight: 400;
+}
+
+.current__details {
+  color: var(--color-muted);
+}
+
+.forecast {
+  margin-top: 28px;
+  border-top: 1px solid var(--color-line);
+}
+
+.day {
+  display: flex;
+  align-items: center;
+  min-height: var(--row-h);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.day__name {
+  flex: 2;
+  color: var(--color-text-dark);
+  font-size: var(--fs-day);
+  font-weight: 700;
+}
+
+.day__icon {
+  flex: 2;
+  width: 56px;
+  max-width: 96px;
+  height: auto;
+}
+
+.day__temps {
+  display: flex;
+  flex: 1.4;
+  flex-direction: column;
+}
+
+.day__high {
+  color: var(--color-text-dark);
+  font-weight: 400;
+}
+
+.day__low,
+.day__pollen {
+  color: var(--color-muted);
+}
+
+.day__pollen {
+  flex: 1.6;
+}
+
+@media (min-width: 600px) {
+  .current__icon {
+    width: 96px;
+  }
+
+  .day__icon {
+    width: 96px;
+  }
+}
