@@ -3,7 +3,7 @@
 Adaptive single-page landing for the design agency **Keepsake**, built from the Figma layout
 (Desktop 1280 / Tablet 768 / Mobile 375 / Mobile menu open / UI states).
 
-**Demo:** https://YOUR-USERNAME.github.io/landing-keepsake/  <!-- replace after enabling GitHub Pages -->
+**Demo:** https://YOUR-USERNAME.github.io/landing-keepsake/
 
 ## Technologies
 - HTML5 (semantic: `header`, `nav`, `main`, `section`, `article`, `footer`, `form`), one `h1`, correct heading hierarchy

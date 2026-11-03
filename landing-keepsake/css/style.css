@@ -1,15 +1,4 @@
-/* ==========================================================================
-   Keepsake — landing page
-   Mobile first: base styles for 375px (valid from 320px),
-   then @media (min-width: 768px) and @media (min-width: 1280px).
-   ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   1. Design tokens
-   -------------------------------------------------------------------------- */
 :root {
-  /* colors (from the brief) */
-  --color-accent: #F95858;
   --color-accent-hover: #E44646;
   --color-teal: #2CD5C4;
   --color-text-dark: #3A3A3C;
@@ -20,7 +9,6 @@
   --color-footer: #2A2A2D;
   --color-overlay: rgba(30, 32, 36, .82);
 
-  /* colors (taken from the Figma frames) */
   --color-white: #FFFFFF;
   --color-border-strong: #D5DADD;
   --color-divider: #EEF1F2;
@@ -42,17 +30,14 @@
   --color-social-dr: #EE7CB0;
   --color-social-pin: #E84849;
 
-  /* shadows */
   --shadow-header: 0 2px 8px rgba(0, 0, 0, .08);
   --shadow-to-top: 0 4px 12px rgba(249, 88, 88, .4);
 
-  /* fonts */
   --font-heading: "Oswald", sans-serif;
   --font-body: "Open Sans", sans-serif;
   --font-script: "Dancing Script", cursive;
   --font-serif: "Lora", serif;
 
-  /* layout (mobile values) */
   --container-max: 1100px;
   --gutter: 20px;
   --section-gap: 56px;
@@ -61,7 +46,6 @@
   --hero-pad: 40px;
   --nav-gap: 24px;
 
-  /* typography (mobile values) */
   --fs-hero: 26px;
   --fs-cta: 22px;
   --fs-stat: 38px;
@@ -101,9 +85,6 @@
   }
 }
 
-/* --------------------------------------------------------------------------
-   2. Base
-   -------------------------------------------------------------------------- */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-h-sticky);
@@ -205,9 +186,6 @@ button:focus-visible {
   background: var(--color-accent);
 }
 
-/* --------------------------------------------------------------------------
-   3. Buttons
-   -------------------------------------------------------------------------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -254,9 +232,6 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* --------------------------------------------------------------------------
-   4. Header and navigation
-   -------------------------------------------------------------------------- */
 .header {
   position: fixed;
   inset: 0 0 auto;
@@ -278,7 +253,6 @@ button:focus-visible {
   height: 100%;
 }
 
-/* header gets compact (64px + shadow) while scrolling, where supported */
 @keyframes header-compact {
   from {
     height: var(--header-h);
@@ -322,7 +296,6 @@ button:focus-visible {
   color: var(--color-white);
 }
 
-/* burger: native checkbox laid over a drawn icon (works without JS) */
 .nav-toggle {
   position: absolute;
   top: 50%;
@@ -369,7 +342,6 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* mobile: drop-down menu */
 .nav {
   position: absolute;
   top: 100%;
@@ -477,7 +449,6 @@ button:focus-visible {
   text-transform: uppercase;
 }
 
-/* tablet and up: horizontal navigation */
 @media (min-width: 768px) {
   .nav-toggle,
   .burger,
@@ -541,9 +512,6 @@ button:focus-visible {
   }
 }
 
-/* --------------------------------------------------------------------------
-   5. Hero
-   -------------------------------------------------------------------------- */
 .hero {
   padding-block: var(--hero-pad);
   background: var(--color-bg-light);
@@ -579,9 +547,6 @@ button:focus-visible {
   }
 }
 
-/* --------------------------------------------------------------------------
-   6. Works: filter (:checked ~), chips, grid, hover card
-   -------------------------------------------------------------------------- */
 .works__inner {
   position: relative;
 }
@@ -605,7 +570,6 @@ button:focus-visible {
 .chips {
   display: flex;
   gap: 8px;
-  /* on mobile the row is not wrapped and scrolls out to the right edge */
   margin-right: calc(-1 * var(--gutter));
   padding-right: var(--gutter);
   overflow-x: auto;
@@ -660,7 +624,6 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* filtering by data-category */
 #f-branding:checked ~ .works__grid .work:not([data-category="branding"]),
 #f-identity:checked ~ .works__grid .work:not([data-category="identity"]),
 #f-print:checked ~ .works__grid .work:not([data-category="print"]),
@@ -682,7 +645,6 @@ button:focus-visible {
   background: var(--color-bg-light);
 }
 
-/* mobile shows 5 cards, tablet 8, desktop 9 */
 .work:nth-child(n + 6) {
   display: none;
 }
@@ -818,9 +780,6 @@ button:focus-visible {
   }
 }
 
-/* --------------------------------------------------------------------------
-   7. CTA
-   -------------------------------------------------------------------------- */
 .cta__inner {
   display: flex;
   flex-direction: column;
@@ -839,9 +798,6 @@ button:focus-visible {
   text-transform: uppercase;
 }
 
-/* --------------------------------------------------------------------------
-   8. Services
-   -------------------------------------------------------------------------- */
 .services {
   display: flex;
   flex-wrap: wrap;
@@ -897,9 +853,6 @@ button:focus-visible {
   }
 }
 
-/* --------------------------------------------------------------------------
-   9. Stats
-   -------------------------------------------------------------------------- */
 .stats {
   display: flex;
   flex-wrap: wrap;
@@ -938,9 +891,6 @@ button:focus-visible {
   }
 }
 
-/* --------------------------------------------------------------------------
-   10. Clients and testimonial
-   -------------------------------------------------------------------------- */
 .clients {
   display: flex;
   flex-wrap: wrap;
@@ -1087,9 +1037,7 @@ button:focus-visible {
   }
 }
 
-/* --------------------------------------------------------------------------
-   11. Journal
-   -------------------------------------------------------------------------- */
+
 .journal {
   display: flex;
   flex-wrap: wrap;
@@ -1179,9 +1127,6 @@ button:focus-visible {
   }
 }
 
-/* --------------------------------------------------------------------------
-   12. Footer and newsletter
-   -------------------------------------------------------------------------- */
 .footer {
   padding-block: 48px 28px;
   background: var(--color-footer);
@@ -1234,7 +1179,6 @@ button:focus-visible {
   text-transform: uppercase;
 }
 
-/* newsletter goes first on mobile */
 .newsletter {
   display: flex;
   order: -1;
@@ -1343,7 +1287,6 @@ button:focus-visible {
   cursor: pointer;
 }
 
-/* success state: the form submits to #subscribed and the message replaces the fields */
 .newsletter__success {
   display: none;
   flex-direction: column;
@@ -1484,9 +1427,6 @@ button:focus-visible {
   }
 }
 
-/* --------------------------------------------------------------------------
-   13. Back-to-top button
-   -------------------------------------------------------------------------- */
 .to-top {
   position: fixed;
   right: 20px;
@@ -1508,9 +1448,6 @@ button:focus-visible {
   background: var(--color-accent-hover);
 }
 
-/* --------------------------------------------------------------------------
-   14. Reduced motion
-   -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
